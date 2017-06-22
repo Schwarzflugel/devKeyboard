@@ -1,18 +1,10 @@
 var router = require('restify-router').Router;
-var mongoose = require('mongoose');
-var presetModel = require('../models/preset');
+var downloadRouter = new router();
+var restify = require('restify');
+var morgan = require('morgan');
 
-router.get('/download/preset', function(req, res, err) {
-     if (err) {
-          res.end({
-               status: 'fail',
-               msg: err
-          });
-     }
-     presetModel.find({}, function(err, presets) {
-          console.log(presets);
-          //res.send(presets);
-     });
-});
+downloadRouter.use(morgan('dev'));
+downloadRouter.use(restify.bodyParser());
+downloadRouter.use(restify.queryParser());
 
-module.exports = router;
+module.exports = downloadRouter;
