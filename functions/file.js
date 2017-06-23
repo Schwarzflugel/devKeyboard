@@ -7,7 +7,7 @@ module.exports.uploadFile = function(file) {
     fs.writeFile(fileName, JSON.stringify(file, null, 3), function(err, data) {
         if (err) {
             res.end({
-                status: false,
+                status: 'fail',
                 msg: 'file writer err'
             });
         } else {
@@ -23,9 +23,9 @@ module.exports.findFile = function(fileName) {
 
     for (var i in files) {
         if (fileName === files[i]) {
-			reserved = true;
+            reserved = true;
         }
     }
 
-	return reserved;
+    return reserved;
 };

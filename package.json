@@ -5,8 +5,7 @@
   "main": "app.js",
   "dependencies": {
     "restify": "^4.3.0",
-    "morgan": "^1.8.2",
-    "bcrypt-nodejs": "^0.0.3"
+    "morgan": "^1.8.2"
   },
   "devDependencies": {},
   "scripts": {
