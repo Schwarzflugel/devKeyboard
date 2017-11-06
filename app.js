@@ -1,6 +1,6 @@
 var restify = require('restify');
 var server = restify.createServer({
-     name: "ㅗㅜㅑ"
+     name: "server"
 });
 
 var dlRouter = require('./routes/download');
